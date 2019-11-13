@@ -1,0 +1,29 @@
+<md-dialog layout="column" flex="25" aria-label="dialog category">
+    <md-dialog-content class="autoScroll" style="max-width:800px;max-height:810px;">
+        <div ng-if="not_exist">
+            <p>Product with name <b>{{pod.product_name}}</b> not exist or already deleted</p>
+        </div>
+        <div ng-if="!not_exist">
+            <p class="hint" ng-if="dif_name">New Product Name : <i>{{product.name}}</i></p>
+            <p>Product Name : <b>{{pod.product_name}}</b></p>
+            <p flex="30">Stock : <b>{{product.stock}} item(s)</b></p>
+        </div>
+        <md-divider></md-divider>
+
+        <div layout="row" layout-align="center center" class="md-padding">
+            <div flex="20" layout="row" layout-align="center" style="background-color:#ECEFF1;">
+                <md-button class="md-icon-button" ng-click="decreaseAmount()">
+                    <md-icon aria-label="Close dialog">remove</md-icon>
+                </md-button>
+            </div>
+            <div flex layout="row" layout-align="center">
+                <h3>{{pod.amount}}</h3>
+            </div>
+            <div flex="20" layout="row" layout-align="center" style="background-color:#ECEFF1;">
+                <md-button class="md-icon-button" ng-click="increaseAmount()">
+                    <md-icon aria-label="Close dialog">add</md-icon>
+                </md-button>
+            </div>
+        </div>
+    </md-dialog-content>
+</md-dialog>

@@ -1,0 +1,100 @@
+<md-dialog layout="column" flex="70" aria-label="dialog place">
+  <form role="form" name="thisForm">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Details Order</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon aria-label="Close dialog">clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content class="autoScroll">
+    <div layout="row">
+      <item flex="25">Buyer Name</item> <item flex="5"> : </item> <item>{{order.buyer}}</item>
+    </div>
+    <div layout="row">
+      <item flex="25">Email</item> <item flex="5"> : </item> <item>{{order.email}}</item>
+    </div>
+    <div layout="row">
+      <item flex="25">Phone</item> <item flex="5"> : </item> <item>{{order.phone}}</item>
+    </div>
+    <div layout="row">
+      <item flex="25">Address</item> <item flex="5"> : </item> <item>{{order.address}}</item>
+    </div>
+
+    <md-divider class="margin-divider"></md-divider>
+    <div layout="row">
+      <item flex="25">Shipping</item> <item flex="5"> : </item> <item>{{order.shipping}}</item>
+    </div>
+    <div layout="row">
+      <item flex="25">Date Shipping</item> <item flex="5"> : </item> <item>{{order.date_ship | date:'dd MMMM yyyy'}}</item>
+    </div>
+
+    <md-divider class="margin-divider"></md-divider>
+    <div layout="row">
+      <item flex="25">Status</item> <item flex="5"> : </item>
+      <item>
+        <waiting ng-if="order.status=='WAITING'">{{order.status}}</waiting>
+        <processed ng-if="order.status=='PROCESSED'">{{order.status}}</processed>
+        <cancel ng-if="order.status=='CANCEL'">{{order.status}}</cancel>
+      </item>
+    </div>
+    <div layout="row">
+      <item flex="25">Total Fees</item> <item flex="5"> : </item> <item>{{order.total_fees}} {{conf_currency}}</item>
+    </div>
+
+    <md-divider class="margin-divider"></md-divider>
+    <div layout="row">
+      <item flex="25">Created At</item> <item flex="5"> : </item> <item>{{order.created_at | date:'hh.mm, dd MMMM yyyy'}}</item>
+    </div>
+    <div layout="row">
+      <item flex="25">Last Update</item> <item flex="5"> : </item> <item>{{order.last_update | date:'hh.mm, dd MMMM yyyy'}}</item>
+    </div>
+
+    <md-divider class="margin-divider"></md-divider>
+    <div layout="row">
+      <item flex="25">Comment</item> <item flex="5"> : </item> <item>{{order.comment}}</item>
+    </div>
+    <md-divider class="margin-divider"></md-divider>
+    <div layout="row">
+      <item flex="25">Serial</item> <item flex="5"> : </item> <item>{{order.serial}}</item>
+    </div>
+    <md-divider class="margin-divider"></md-divider>
+
+    <br>
+    <h3>List Product Order : </h3>
+    <md-divider></md-divider>
+    <div layout="row">
+      <item flex="5">No.</item> <item flex="55">Product</item> <item flex="15">Price Item</item> <item flex="5">Amount</item>
+      <item flex="20" layout="row" layout-align="end center">Price Total</item>
+    </div>
+    <md-divider></md-divider>
+
+    <div layout="row" ng-repeat="pod in order_details">
+      <item flex="5">{{$index+1}}</item><item flex="55">{{pod.product_name}}</item> <item flex="15">{{pod.price_item}}</item> <item flex="5">{{pod.amount}}</item>
+      <item flex="20" layout="row" layout-align="end center">{{getPriceTotal(pod)}} {{conf_currency}}</item>
+    </div>
+    <md-divider></md-divider>
+    <div layout="row">
+      <item flex="80">Total</item>
+      <item flex="20" layout="row" layout-align="end center">{{price_total_formatted}} {{conf_currency}}</item>
+    </div>
+    <div layout="row">
+      <item flex="80">Tax * ({{order.tax}} %)</item>
+      <item flex="20" layout="row" layout-align="end center">{{price_tax_formatted}} {{conf_currency}}</item>
+    </div>
+    <md-divider></md-divider>
+    <div layout="row">
+      <item flex="80">Total After Tax</item>
+      <item flex="20" layout="row" layout-align="end center">{{price_after_tax}} {{conf_currency}}</item>
+    </div>
+    <md-divider></md-divider>
+    <p class="hint"><i> * This tax may different with your current tax, this tax calculate when buyer submit order</i></p>
+    <br><br>
+  </md-dialog-content>
+  <div class="md-actions" layout="row" style="padding-left: 8px;" ng-if="process">
+    <md-button flex="100" md-no-ink ng-click="processOrder(order)" class="md-accent md-raised" >PROCESS ORDER</md-button>
+  </div>
+  </form>
+</md-dialog>

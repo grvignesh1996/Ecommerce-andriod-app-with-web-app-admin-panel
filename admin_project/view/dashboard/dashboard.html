@@ -1,0 +1,100 @@
+<md-card class="md-whiteframe-1dp md-padding">
+
+    <div layout="row" layout-sm="column">
+        <md-card-content flex>
+            <p class="md-title title-no-top">Product Order</p>
+            <md-divider></md-divider>
+            <div layout="row">
+                <item flex="40">Waiting</item> <item flex="5">:</item> <item flex>{{order.waiting}}</item>
+            </div>
+            <div layout="row">
+                <item flex="40">Processed</item> <item flex="5">:</item> <item flex>{{order.processed}}</item>
+            </div>
+            <div layout="row">
+                <item flex="40">Total Order</item> <item flex="5">:</item> <item flex>{{order.total}}</item>
+            </div>
+        </md-card-content>
+        <md-card-content flex></md-card-content>
+    </div>
+    <div layout="row" layout-sm="column">
+        <md-card-content flex>
+            <p class="md-title title-no-top">Product Information</p>
+            <md-divider></md-divider>
+            <div layout="row">
+                <item flex="40">Published</item> <item flex="5">:</item> <item flex>{{product.published}}</item>
+            </div>
+            <div layout="row">
+                <item flex="40">Draft</item> <item flex="5">:</item> <item flex>{{product.draft}}</item>
+            </div>
+            <md-divider></md-divider>
+            <div layout="row">
+                <item flex="40">Ready Stock</item> <item flex="5">:</item> <item flex>{{product.ready_stock}}</item>
+            </div>
+            <div layout="row">
+                <item flex="40">Out of Stock</item> <item flex="5">:</item> <item flex>{{product.out_of_stock}}</item>
+            </div>
+            <div layout="row">
+                <item flex="40">Suspend</item> <item flex="5">:</item> <item flex>{{product.suspend}}</item>
+            </div>
+        </md-card-content>
+        <md-card-content flex>
+            <p class="md-title title-no-top">Category Information</p>
+            <md-divider></md-divider>
+            <div layout="row">
+                <item flex="40">Published</item> <item flex="5">:</item> <item flex>{{category.published}}</item>
+            </div>
+            <div layout="row">
+                <item flex="40">Draft</item> <item flex="5">:</item> <item flex>{{category.draft}}</item>
+            </div>
+        </md-card-content>
+    </div>
+</md-card>
+<br>
+<md-card class="md-whiteframe-1dp md-padding">
+    <div layout="row" layout-sm="column">
+        <md-card-content flex>
+            <p class="md-title title-no-top">News Info</p>
+            <md-divider></md-divider>
+            <div layout="row">
+                <item flex="40">Featured</item> <item flex="5">:</item> <item flex>{{news.featured}}  ( max {{setting.featured_news}} )</item>
+            </div>
+            <div layout="row">
+                <item flex="40">Published</item> <item flex="5">:</item> <item flex>{{news.published}}</item>
+            </div>
+            <div layout="row">
+                <item flex="40">Draft</item> <item flex="5">:</item> <item flex>{{news.draft}}</item>
+            </div>
+        </md-card-content>
+        <md-card-content flex>
+            <p class="md-title title-no-top">App Version</p>
+            <md-divider></md-divider>
+            <div layout="row">
+                <item flex="40">Active</item> <item flex="5">:</item> <item flex>{{app.active}}</item>
+            </div>
+            <div layout="row">
+                <item flex="40">Inactive</item> <item flex="5">:</item> <item flex>{{app.inactive}}</item>
+            </div>
+        </md-card-content>
+    </div>
+    <div layout="row" layout-sm="column">
+        <md-card-content flex>
+            <p class="md-title title-no-top">Application Setting</p>
+            <md-divider></md-divider>
+            <div layout="row">
+                <item flex="40">Currency</item> <item flex="5">:</item> <item flex>{{setting.currency}}</item>
+            </div>
+            <div layout="row">
+                <item flex="40">Tax</item> <item flex="5">:</item> <item flex>{{setting.tax}} %</item>
+            </div>
+        </md-card-content>
+        <md-card-content flex>
+            <p class="md-title title-no-top">Notification</p>
+            <md-divider></md-divider>
+            <div layout="row">
+                <item flex="40">Users</item> <item flex="5">:</item> <item flex>{{notification.users}}</item>
+            </div>
+        </md-card-content>
+    </div>
+</md-card>
+
+<br>

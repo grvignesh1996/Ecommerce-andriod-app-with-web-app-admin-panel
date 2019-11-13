@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_cart"
+            android:icon="@drawable/ic_cart"
+            android:title="@string/str_nav_shopping_cart"
+            app:actionLayout="@layout/menu_counter_plain_" />
+
+        <item
+            android:id="@+id/nav_wish"
+            android:icon="@drawable/ic_nav_wish"
+            android:title="@string/str_nav_wishlist"
+            app:actionLayout="@layout/menu_counter_plain_" />
+
+        <item
+            android:id="@+id/nav_history"
+            android:icon="@drawable/ic_nav_history"
+            android:title="@string/str_nav_history" />
+
+        <item
+            android:id="@+id/nav_news"
+            android:icon="@drawable/ic_nav_news"
+            android:title="@string/str_nav_news" />
+
+        <item
+            android:id="@+id/nav_notif"
+            android:icon="@drawable/ic_nav_notifications"
+            android:title="@string/str_nav_notifications"
+            app:actionLayout="@layout/menu_dot_sign" />
+
+
+    </group>
+    <item android:title="@string/sub_title_nav_others">
+        <menu>
+
+            <item
+                android:id="@+id/nav_instruction"
+                android:icon="@drawable/ic_nav_instruction"
+                android:title="@string/str_nav_instruction" />
+
+            <item
+                android:id="@+id/nav_setting"
+                android:icon="@drawable/ic_nav_settings"
+                android:title="@string/str_nav_setting" />
+            <item
+                android:id="@+id/nav_rate"
+                android:icon="@drawable/ic_nav_rate"
+                android:title="@string/str_nav_rate" />
+
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_nav_about"
+                android:title="@string/str_nav_about" />
+        </menu>
+    </item>
+
+</menu>

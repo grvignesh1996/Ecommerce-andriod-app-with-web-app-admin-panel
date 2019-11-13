@@ -1,0 +1,69 @@
+<md-card class="md-whiteframe-1dp md-padding">
+  <form role="form" name="thisForm" id="thisForm" novalidate class="md-padding">
+  
+	<div layout="row">
+		<md-input-container flex="45">
+			<label>Category Name *</label>
+			<input required name="name" ng-model="category.name" maxlength="50">
+		</md-input-container>
+	</div>
+
+	<p class="hint"><i>Color that contrast with white will be easy read by user, see example display at color box below</i></p>
+	<div layout="row" layout-align="start center">
+		<md-input-container flex="10">
+			<label>Color *</label>
+			<input colorpicker required name="color" ng-model="category.color" maxlength="7" readonly>
+		</md-input-container>
+		<div style="width:200px;background-color:{{category.color}};margin:10px;color:#FFFFFF;padding:5px;">
+			<b>Category Name Text</b>
+		</div>
+	</div>
+	<div layout="row">
+		<md-input-container flex="45">
+			<label>Brief *</label>
+			<textarea required name="brief" maxlength="100" ng-model="category.brief" rows="2"></textarea>
+		</md-input-container>
+	</div>
+
+	<p class="hint"><i>Priority determines the order of the list of categories in android, order by priority <b>ASCENDING</b></i></p>
+	<div layout="row">
+	  <md-input-container flex="10">
+		  <label>Priority *</label>
+		  <input type="number" required name="priority" ng-model="category.priority" maxlength="5">
+	  </md-input-container>
+	</div>
+	
+    <fieldset class="standard margin-input-container md-padding">
+		<legend>Icon *</legend>
+		<div layout="row" layout-align="center center">
+			<input class="padding-top-bottom" type="file" name="icon" onchange="angular.element(this).scope().onFileSelect(this.files)" flex/>
+			<md-button class="md-icon-button" ng-click="viewImage($event, 'uploads/category/'+category.icon)" ng-if="!isNewEntry()">
+				<md-icon>wallpaper</md-icon>
+			</md-button>
+		</div>
+		<div ng-if="!icon.valid" class="red-alert">PNG only, max size 0.5MB</div>
+
+		<p class="hint">
+			1. Image Ratio is 1:1, recommended size is W:200px H:200px<br>
+			2. Image with single color (<i>Monochrome</i>) </i><br>
+			3. Transparent background<br><br>
+			<a target="_blank" href="http://blog.dream-space.web.id/?p=146">Full Icon Guide</a>
+		</p>
+    </fieldset>
+
+	<br>
+	<md-divider></md-divider>
+	<md-checkbox ng-model="category.draft" ng-true-value="1" ng-false-value="0">Save As draft</md-checkbox>
+	<p class="hint">When you checked <i>Save As draft</i> the data will not display at user device.</p>
+
+	<br><br>
+    <em> (*) required field</em>
+
+    <div class="md-actions md-padding" layout="row">
+		<span flex></span>
+		<md-button ng-if="!submit_loading" class="md-warn" ng-click="cancel()" > CANCEL </md-button>
+		<md-button ng-if="!submit_loading" ng-disabled="!isReadySubmit() || thisForm.$invalid" ng-click="submit(category)" class="md-raised md-primary"> {{button_text}} </md-button>
+		<md-progress-circular ng-if="submit_loading" class="md-accent" md-mode="indeterminate" md-diameter="30px"></md-progress-circular>
+    </div>
+  </form>
+</md-card>

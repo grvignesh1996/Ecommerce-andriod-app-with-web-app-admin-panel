@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.app.markeet">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+
+    <application
+        android:name=".ThisApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- List Of Activity Class -->
+        <activity android:name=".ActivitySplash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ActivityMain"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity android:name=".ActivityInstruction" />
+        <activity android:name=".ActivityNewsInfo" />
+        <activity android:name=".ActivityNewsInfoDetails" />
+        <activity android:name=".ActivityCategoryDetails" />
+        <activity android:name=".ActivityProductDetails" />
+        <activity android:name=".ActivityFullScreenImage" />
+        <activity android:name=".ActivitySearch" />
+        <activity android:name=".ActivityNotification" />
+        <activity android:name=".ActivityWishlist" />
+        <activity android:name=".ActivityShoppingCart" />
+        <activity android:name=".ActivityCheckout" />
+        <activity android:name=".ActivityOrderHistory" />
+        <activity
+            android:name=".ActivityDialogNotification"
+            android:theme="@style/AppTheme.Dialog.NoActionBar" />
+        <activity
+            android:name=".ActivitySettings"
+            android:theme="@style/AppThemeSetting" />
+
+        <!-- Ads activity -->
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
+
+        <!-- fireBase service -->
+        <service android:name=".fcm.FcmMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!-- fireBase iid service -->
+        <service android:name=".fcm.FcmInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>

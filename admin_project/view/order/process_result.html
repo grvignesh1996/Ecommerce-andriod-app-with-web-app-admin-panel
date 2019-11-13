@@ -1,0 +1,35 @@
+<md-dialog layout="column" flex="60" aria-label="dialog place">
+  <form role="form" name="thisForm">
+    <md-toolbar style="{{success ? '' : 'background-color:red;'}}">
+      <div class="md-toolbar-tools">
+        <md-icon style="margin:5px;" flex="5">{{success ? 'assignment_turned_in' : 'error'}}</md-icon>
+        <h2>Process Order {{success ? 'Success' : 'Failed'}}</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="edit()" ng-if="!success">
+          <md-icon aria-label="Close dialog">create</md-icon>
+          <md-tooltip>Edit Order</md-tooltip>
+        </md-button>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon aria-label="Close dialog">clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content class="autoScroll">
+      <p ng-if="success">Orders from buyer '{{order.buyer}}' successfully processed</p>
+      <p ng-if="!success">Failed to process orders from buyer '{{order.buyer}}', please review table of product order below</p>
+      <div layout="row">
+        <item flex="5">No.</item> <item flex="65"><b>Product</b></item> <item flex="10"><b>Amount</b></item> <item flex="20"><b>Message</b></item>
+      </div>
+      <md-divider></md-divider>
+
+      <div layout="row" ng-repeat="pod in resp.data">
+        <item flex="5">{{$index+1}}</item><item flex="65">{{pod.product_name}}</item> <item flex="10">{{pod.amount}}</item> <item flex="20">{{pod.msg}}</item>
+      </div>
+      <md-divider></md-divider>
+    </md-dialog-content>
+    <div class="md-actions" layout="row">
+        <span flex></span>
+        <md-button md-no-ink ng-click="cancel()" class="md-accent md-raised" >CLOSE</md-button>
+    </div>
+  </form>
+</md-dialog>

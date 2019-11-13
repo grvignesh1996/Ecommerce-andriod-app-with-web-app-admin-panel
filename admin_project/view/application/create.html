@@ -1,0 +1,46 @@
+<md-dialog layout="column" flex="50" aria-label="dialog category">
+  <form role="form" name="thisForm">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2 flex>{{title}}</h2>
+        <md-button class="md-icon-button" ng-click="cancel()"> <md-icon aria-label="Close dialog">clear</md-icon> </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content class="autoScroll" style="max-width:800px;max-height:810px;">
+      <p class="hint" ng-if="!is_new">
+        Be careful when you <b>set inactive</b> or <b>delete</b> app version,
+        <b>set inactive</b> or <b>delete</b> will cause forcing user with version N to update their app.
+        Make sure your newest app version already available at google play.
+      </p>
+      <div layout="row">
+		<md-input-container flex="30">
+          <label>Version Code *</label>
+          <input required type="number" name="version_code" ng-model="app.version_code" maxlength="11">
+        </md-input-container>
+      </div>
+	  
+      <div layout="row">
+        <md-input-container flex="50">
+          <label>Version Name *</label>
+          <input required name="version_name" ng-model="app.version_name" maxlength="50">
+        </md-input-container>
+      </div>
+
+	  <md-input-container flex="30">
+		 <md-checkbox ng-model="app.active" ng-true-value="1" ng-false-value="0">Active</md-checkbox>
+	  </md-input-container>
+    </md-dialog-content>
+
+    <div class="md-actions md-padding" layout="row">
+      <span flex></span>
+      <md-button ng-if="!submit_loading"  class="md-warn" ng-click="hide()" >
+       CANCEL
+      </md-button>
+      <md-button ng-if="!submit_loading" ng-disabled="isClean() || thisForm.$invalid" ng-click="submit(app)" style="margin-right:20px;" class="md-raised md-primary">
+        {{buttonText}}
+      </md-button>
+      <md-progress-circular ng-if="submit_loading" class="md-accent" md-mode="indeterminate" md-diameter="30px"></md-progress-circular>
+    </div>
+  </form>
+</md-dialog>

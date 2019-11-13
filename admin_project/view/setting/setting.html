@@ -1,0 +1,146 @@
+<md-card class="md-whiteframe-1dp md-padding">
+	<md-card-content>
+		<form role="form" name="thisForm">
+			<h2 class="md-title">Application Setting</h2>
+			<md-divider></md-divider>
+			<p class="hint"><b>TAX</b> : Value Added Tax (VAT) or Goods and Services Tax (GST). This tax will be added in every purchase transaction.
+			<br><b>Feature News</b> : Maximum News Info display on home android app. Recommended value is 5</p>
+
+			<br>
+			<div layout="row">
+				<md-input-container flex="30">
+					<label>Currency</label>
+					<md-select ng-model="selected_currency">
+						<md-option ng-repeat="cur in arr_currency" value="{{cur.code}}" selected="{{cur.code===conf_currency?'selected':''}}"> 
+							{{cur.code}} - {{cur.name}} 
+						</md-option>
+					</md-select>
+				</md-input-container>
+			</div>
+
+			<div layout="row" layout-align="start center">
+				<md-input-container flex="10">
+					<label>TAX</label>
+					<input type="number" required name="tax" ng-model="conf_tax" maxlength="4">
+				</md-input-container>
+				<legend flex="5"><b>%</b></legend>
+				<md-input-container flex="15">
+					<label>Featured News</label>
+					<input type="number" required name="featured_news" ng-model="conf_featured_news" maxlength="1">
+				</md-input-container>
+			</div>
+
+			<div layout="row" layout-align="start start">
+				<md-input-container flex="50">
+					<label>Shipping</label>
+					<md-chips ng-model="conf_shipping" required></md-chips>
+				</md-input-container>
+				<md-button md-no-ink class="md-primary" ng-click="resetShipping()" style="margin-top:20px;">RESET</md-button>
+			</div>
+
+			<br>
+			<h2 class="md-title">Email Report Setting</h2>
+			<md-divider></md-divider>
+			<p class="hint">
+				<b>Email on New Order</b> : Report Order Product, email will be send to <i>buyer</i> and <i>BCC Email Receiver members</i>.
+				<br><b>Email on Order Processed</b> : Notify that Order status change to PROCESSED, email will be send to <i>buyer</i> only.
+				<br><b>Email Reply to</b> : When buyer reply your email, it will be received by this email</p>
+			<br>
+
+			<div layout="column" layout-align="start start">
+				<md-checkbox ng-model="conf_email_notif_on_order">Email on New Order</md-checkbox>
+				<md-checkbox ng-model="conf_email_notif_on_order_process">Email on Order Processed</md-checkbox>
+			</div>
+			<br><br>
+			<div layout="row" layout-align="start center">
+				<md-input-container flex="30">
+					<label>Email Reply to</label>
+					<input type="text" required ng-model="conf_email_reply_to" maxlength="50">
+				</md-input-container>
+			</div>
+
+			<div layout="row" layout-align="start start">
+				<md-input-container flex="50">
+					<label>BCC Email(s) Receiver</label>
+					<md-chips ng-model="conf_email_receiver" required readonly="!conf_email_notif_on_order"></md-chips>
+				</md-input-container>
+				<md-button md-no-ink class="md-primary" ng-click="resetEmailReceiver()" style="margin-top:20px;">RESET</md-button>
+			</div>
+			<br><br>
+
+			<div layout="row" layout-align="end center" flex="100">
+				<md-button ng-if="!submit_loading_conf" ng-disabled="thisForm.$invalid || !isReadySubmitConf()" ng-click="submitConf()" class="md-raised md-accent">
+					SAVE
+				</md-button>
+				<md-progress-circular ng-if="submit_loading_conf" class="md-accent" md-mode="indeterminate" md-diameter="30px"></md-progress-circular>
+			</div>
+
+		</form>
+	</md-card-content>
+</md-card>
+
+<br>
+<md-card class="md-whiteframe-1dp md-padding">
+	<md-card-content>
+		<h2 class="md-title">User Panel Setting</h2>
+		<form role="form" name="thisFormUser">
+			<div layout="row">
+				<md-input-container flex="30">
+					<label>Name</label>
+					<input name="name" minlength="1" maxlength="50" ng-model="userdata.name" required />
+					<div ng-messages="thisForm.name.$error">
+						<div ng-message='required'>required.</div>
+						<div ng-message='minlength'>min length 1</div>
+					</div>
+				</md-input-container>
+				<div flex="5"></div>
+				<md-input-container flex="30">
+					<label>Email</label>
+					<input type="email" minlength="5" maxlength="50" name="email" ng-model="userdata.email" required />
+					<div ng-messages="thisForm.email.$error">
+						<div ng-message='required'>required.</div>
+						<div ng-message='minlength'>min length 10.</div>
+					</div>
+				</md-input-container>
+			</div>
+
+
+			<div layout="row">
+				<md-input-container flex="30">
+					<label>Username</label>
+					<input name="username" minlength="1" maxlength="20" ng-model="userdata.username" required />
+					<div ng-messages="thisForm.username.$error">
+						<div ng-message='required'>required.</div>
+						<div ng-message='minlength'>min length 5.</div>
+					</div>
+				</md-input-container>
+			</div>
+			<div layout="row">
+				<md-input-container flex="30">
+					<label>Password</label>
+					<input type="password" name="password" ng-model="userdata.password" required />
+					<div ng-messages="thisForm.password.$error">
+						<div ng-message='required'>required.</div>
+					</div>
+				</md-input-container>
+				<div flex="5"></div>
+				<md-input-container flex="30">
+					<label>Re-Type Password</label>
+					<input type="password" name="re_password" ng-model="re_password" />
+					<div ng-if="!isPasswordMatch() || !re_passwordValid" class="red-alert">Password not match</div>
+				</md-input-container>
+			</div>
+			<div layout="row" layout-align="end center" flex="100">
+				<md-button ng-if="!submit_loading" ng-disabled="!isPasswordMatch() || thisFormUser.$invalid || demo_version || isClean()" ng-click="submit(true)" class="md-raised md-accent">
+					Add New
+				</md-button>
+				<md-button ng-if="!submit_loading" ng-disabled="!isPasswordMatch() || thisFormUser.$invalid || demo_version || isClean()" ng-click="submit(false)" class="md-raised md-accent">
+					Update
+				</md-button>
+				<md-progress-circular ng-if="submit_loading" class="md-accent" md-mode="indeterminate" md-diameter="30px"></md-progress-circular>
+			</div>
+
+		</form>
+	</md-card-content>
+</md-card>
+

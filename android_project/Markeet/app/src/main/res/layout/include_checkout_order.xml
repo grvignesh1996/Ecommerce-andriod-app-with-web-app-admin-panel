@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/spacing_large">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/spacing_xxlarge"
+        android:layout_marginBottom="@dimen/spacing_medium"
+        android:gravity="center_vertical|start"
+        android:paddingLeft="@dimen/spacing_middle"
+        android:paddingRight="@dimen/spacing_middle"
+        android:text="@string/product_order_list"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="@color/grey_20" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:scrollbars="vertical"
+        android:scrollingCache="true" />
+
+</LinearLayout>

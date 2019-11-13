@@ -1,0 +1,224 @@
+<resources>
+    <string name="app_name">Markeet</string>
+    <string name="app_tag_line">Online Store for Everyone</string>
+
+    <string name="title_about">About</string>
+    <string name="content_about">Markeet is an online store that sells various types of products, such as clothes, mobile phones, home appliances, and other products. Excellent product quality and competitive prices.
+        \n\nThis application is just a demo of the items on Envato</string>
+
+    <string name="title_activity_news_info">News Info</string>
+    <string name="title_activity_notifications">Notifications</string>
+    <string name="title_activity_wishlist">Wishlist</string>
+    <string name="title_activity_cart">Shopping Cart</string>
+    <string name="title_activity_checkout">Checkout</string>
+    <string name="title_activity_history">Order History</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!--ADS UNIT ID  -->
+    <string name="interstitial_ad_unit_id">ca-app-pub-3397136890800435/4566183904</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3397136890800435/3089450708</string>
+
+    <!--All data for ActivityMain.java -->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="str_nav_shopping_cart">Shopping Cart</string>
+    <string name="str_nav_wishlist">Wishlist</string>
+    <string name="str_nav_history">Order History</string>
+    <string name="str_nav_news">News Info</string>
+    <string name="str_nav_notifications">Notifications</string>
+    <string name="sub_title_nav_others">Others</string>
+    <string name="str_nav_instruction">Instruction</string>
+    <string name="str_nav_setting">Settings</string>
+    <string name="str_nav_rate">Rate</string>
+    <string name="str_nav_about">About</string>
+    <string name="press_again_exit_app">Press again to exit</string>
+
+    <string name="title_what_news">What\'s News</string>
+    <string name="title_category">Categories</string>
+
+    <!--All data for ActivityCategoryDetails.java -->
+    <string name="title_menu_search">Search</string>
+    <string name="title_menu_delete">Delete</string>
+
+    <!--All data for ActivityProductDetails.java -->
+    <string name="please_wait_text">Please wait until data loaded</string>
+    <string name="categories_product">Categories :&#160;</string>
+    <string name="cannot_add_wishlist">cannot add to wishlist</string>
+    <string name="add_wishlist">Add to wishlist</string>
+    <string name="remove_wishlist">Remove from wishlist</string>
+    <string name="add_cart">Add to shopping cart</string>
+    <string name="remove_cart">Remove from shopping cart</string>
+    <string name="msg_out_of_stock">Ops, Product out of stock</string>
+    <string name="msg_suspend">Ops, Product is suspend</string>
+    <string name="out_of_stock">OUT OF STOCK</string>
+    <string name="suspend">SUSPEND</string>
+    <string name="ready_stock">READY STOCK</string>
+    <string name="bt_add_cart">ADD TO CART</string>
+    <string name="bt_remove_cart">REMOVE FROM CART</string>
+
+    <!--All data for ActivitySplash.java -->
+    <string name="title_unable_connect">Unable connect to server</string>
+    <string name="msg_unable_connect">Server temporary down or under maintenance</string>
+    <string name="msg_app_out_date">Application is out of date, please update to get latest version</string>
+    <string name="msg_no_internet">Please check your Internet connection and try again</string>
+    <string name="title_info">Information</string>
+    <string name="title_no_internet">No Internet Connection</string>
+
+    <!--All data for ActivityWishlist.java -->
+    <string name="msg_wishlist_empty">Wishlist is empty</string>
+    <string name="title_menu_wishlist">Wishlist</string>
+
+    <!--All data for ActivityShoppingCart.java -->
+    <string name="msg_cart_empty">Shopping Cart is empty</string>
+    <string name="before_tax">( Before tax )</string>
+    <string name="total">Total&#160;</string>
+    <string name="stock">Stock : &#160;</string>
+    <string name="QUANTITY">QUANTITY</string>
+    <string name="items">Item(s)</string>
+    <string name="title_menu_checkout">Checkout</string>
+
+    <!--All data for ActivitySearch.java -->
+    <string name="ALL">ALL</string>
+    <string name="Category">Category :&#160;</string>
+    <string name="hint_input_search">Search input</string>
+    <string name="please_fill">Please Fill Search Input</string>
+
+    <!--All data for ActivityOrderHistory.java -->
+    <string name="msg_history_empty">Order History is empty</string>
+    <string name="title_history_details">Order History Details</string>
+
+    <!--All data for ActivityNotification.java -->
+    <string name="msg_notif_empty">Notification is empty</string>
+
+    <!--All data for ActivityCheckout.java -->
+    <string name="cost_details">Cost Details</string>
+    <string name="total_order">Total Order :&#160;</string>
+    <string name="tax">Tax&#160;</string>
+    <string name="total_fess">Total Fees :&#160;</string>
+    <string name="buyer_profile">Buyer Profile</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_phone">Phone</string>
+    <string name="hint_address">Address</string>
+    <string name="hint_shipping">Shipping</string>
+    <string name="choose_shipping">Choose shipping</string>
+    <string name="hint_date_ship">Date Shipping</string>
+    <string name="hint_comment">Comment</string>
+    <string name="product_order_list">Product Order List</string>
+
+    <string name="invalid_name">invalid name</string>
+    <string name="invalid_email">invalid email</string>
+    <string name="invalid_phone">invalid phone</string>
+    <string name="invalid_address">invalid address</string>
+    <string name="invalid_shipping">invalid shipping</string>
+    <string name="invalid_date_ship">invalid date shipping</string>
+    <string name="invalid_comment">invalid comment</string>
+
+    <string name="title_please_wait">Please Wait</string>
+    <string name="content_submit_checkout">Submit Checkout&#8230;</string>
+    <string name="confirmation">Confirmation</string>
+    <string name="confirm_checkout">Are you sure want to checkout this order?</string>
+    <string name="failed_checkout">
+        Oops, Failed when checkout order
+        \n\nMake sure you have internet connection, or if you need help please Contact Us from menu Settings
+    </string>
+    <string name="success_checkout">Congratulation</string>
+    <string name="msg_success_checkout">
+        Successfully checkout order.\nYour order code : %1$s\n\nYour order will be review soon. When your order is ready, invoice detail will be sent to your email.
+    </string>
+    <string name="process_checkout">PROCESS CHECKOUT</string>
+
+    <!--All data ActivityNewsInfoDetails.java -->
+    <string name="featured">featured</string>
+
+    <!--All data for ActivityDialogNotification.java -->
+    <string name="title_notif_details">Notification Details</string>
+    <string name="title_notif">Notification</string>
+
+    <!--All data ActivityFullScreenImage.java -->
+    <string name="image_of">%1$d of %2$d</string>
+
+    <!--All data related about page-->
+    <!--Size three array below must be same -->
+    <string-array name="about_title_array">
+        <item>WELCOME</item>
+        <item>DISCOVER PRODUCT</item>
+        <item>ADD TO CART</item>
+        <item>VERIFY AND RECEIVE</item>
+    </string-array>
+
+    <string-array name="about_description_array">
+        <item>Markeet is Premium Online Shopping\nPlatform for Everyone</item>
+        <item>Search Latest and Featured Product\nWith Best Price</item>
+        <item>Add to Cart All Product You need\nAnd Checkout the Order</item>
+        <item>We Will Verify Your Order\nPay the Bill and Receive the Product</item>
+    </string-array>
+
+    <integer-array name="about_images_array">
+        <item>@drawable/intro_img_1</item>
+        <item>@drawable/intro_img_2</item>
+        <item>@drawable/intro_img_3</item>
+        <item>@drawable/intro_img_4</item>
+    </integer-array>
+
+    <!-- Activity Setting : xml/setting_preference.xml -->
+    <string name="app_version">Version</string>
+    <string name="developer_email">dev.dream.space@gmail.com</string>
+    <string name="copyright">Copyright © 2016 Dream Space. \nAll right reserved</string>
+
+    <string name="pref_group_notif">NOTIFICATIONS</string>
+    <string name="pref_group_others">OTHERS</string>
+    <string name="pref_title_notif">Push Notifications</string>
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="pref_title_copyright">Copyright</string>
+    <string name="pref_title_contact_us">Contact Us</string>
+    <string name="pref_title_build">Build Version &amp; Serial </string>
+    <string name="pref_title_term">Term &amp; Policies</string>
+    <string name="pref_ringtone_silent">Silent</string>
+    <string name="grant_permission_storage">Grant storage permission to enable</string>
+
+    <string name="content_term">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dolor risus, aliquet a erat quis, viverra molestie orci. Suspendisse vehicula porta libero. Nam tincidunt nulla ipsum, vel iaculis risus scelerisque sed. Phasellus venenatis, enim vel placerat blandit, leo eros bibendum erat, at auctor mauris diam ac risus. Aenean sit amet congue neque, sit amet condimentum elit. Fusce lacinia massa vel nisl scelerisque, in scelerisque dolor elementum. Vivamus leo enim, congue dictum congue vitae, porttitor id purus. Sed eu ultricies erat. Morbi hendrerit, mi ac volutpat commodo, magna turpis pretium nibh, at fringilla eros lorem quis tellus. Praesent porttitor purus nibh, ac vestibulum massa fringilla vel. Pellentesque dapibus nulla quis luctus dictum. In scelerisque ut ex sed facilisis. Nunc eu finibus nulla, ut hendrerit sem. Suspendisse accumsan risus vel diam fringilla iaculis.
+        \n\nQuisque facilisis finibus aliquam. Sed mattis, dui fringilla ornare finibus, orci odio blandit risus, ut maximus dui odio non leo. Donec laoreet lacus nisi, a mollis velit suscipit ac. Quisque faucibus ut nisl in congue. Nam sagittis consectetur tempus. Suspendisse eget posuere dui. Donec ultricies velit ex, vel cursus odio sollicitudin in. Nullam faucibus auctor ligula, eu rhoncus dui facilisis a. Curabitur vel feugiat est. Quisque congue at enim eleifend ultrices. Proin dapibus risus lorem, nec condimentum nunc consequat vitae. Quisque sapien lorem, vestibulum vitae justo eget, fringilla eleifend nisi.
+        \n\nMauris ultricies augue sit amet est sollicitudin laoreet. Fusce ut congue felis. Fusce dictum tristique elit nec iaculis. Mauris sodales tempus fringilla. Fusce nec nunc tempus, tempor sapien sit amet, ultricies erat. Mauris ultrices ac lorem ultrices facilisis. Nam pharetra, nisi a imperdiet interdum, nunc justo ultricies nisl, a laoreet massa dui vel enim. Pellentesque et magna ac tellus ullamcorper malesuada a ac nisl. Curabitur id est et neque convallis accumsan. Aliquam eleifend varius massa. Curabitur eu finibus tortor.
+        \n\nVivamus aliquam nisl rutrum orci volutpat porta in ornare est. Quisque ligula ipsum, vulputate id aliquam vitae, semper vitae orci. Nam non pulvinar ligula, eget tincidunt ante. Quisque sapien massa, varius tempus pretium id, vehicula at magna. Ut ut ultrices augue. Nam nec ullamcorper tellus, at finibus lectus. Fusce vel iaculis mauris, id porta nulla. Aenean ac mollis sapien. Morbi imperdiet augue tempus nulla luctus, sit amet feugiat purus elementum.
+    </string>
+    <string name="version_unknown">Unknown</string>
+
+
+    <!-- Other String -->
+    <string name="failed_text">Failed When Load Data</string>
+    <string name="no_internet_text">No Internet Connection</string>
+    <string name="no_item">No Item</string>
+    <string name="msg_data_loaded">Data loaded</string>
+    <string name="msg_failed_load_data">Failed when load data</string>
+    <string name="title_delete_confirm">Delete Confirmation</string>
+    <string name="content_delete_confirm">Are you sure want to delete all&#160;</string>
+    <string name="delete_success">Delete successfully</string>
+    <string name="msg_copied_clipboard">Text copied to clipboard</string>
+    <string name="failed">Failed</string>
+
+    <string name="OK">OK</string>
+    <string name="GOT_IT">GOT IT</string>
+    <string name="YES">YES</string>
+    <string name="NO">NO</string>
+    <string name="SETTING">SETTING</string>
+    <string name="CANCEL">CANCEL</string>
+    <string name="CLOSE">CLOSE</string>
+    <string name="UPDATE">UPDATE</string>
+    <string name="DISMISS">DISMISS</string>
+    <string name="HIDE">HIDE</string>
+    <string name="RETRY">RETRY</string>
+    <string name="TRY_AGAIN">TRY AGAIN</string>
+    <string name="DETAILS">DETAILS</string>
+    <string name="FAILED">FAILED</string>
+    <string name="TYPE_SEARCH">SEARCH</string>
+    <string name="NO_IMAGE">NO IMAGE</string>
+    <string name="DELETE">DELETE</string>
+    <string name="OPEN">OPEN</string>
+    <string name="SAVE">SAVE</string>
+    <string name="NEXT">NEXT</string>
+    <string name="SKIP">SKIP</string>
+
+</resources>

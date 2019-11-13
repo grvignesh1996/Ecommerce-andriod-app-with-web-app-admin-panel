@@ -1,0 +1,61 @@
+<md-card class="md-whiteframe-1dp md-padding">
+  <form role="form" name="thisForm" id="thisForm" novalidate class="md-padding">
+  
+	<div layout="row">
+		<md-input-container flex="70">
+			<label>News Title *</label>
+			<input required name="title" ng-model="news.title" maxlength="100">
+		</md-input-container>
+	</div>
+
+	<div layout="row" layout-align="start end">
+		<md-input-container flex="20">
+			<label>News Status *</label>
+			<md-select required ng-model="news.status"> 
+				<md-option ng-repeat="s in status_array" value="{{s}}">{{s}}</md-option> 
+			</md-select>
+		</md-input-container>
+	</div>
+	<div class="hint" ng-if="featured_exceed==1"><i><b>Featured - non Draft</b> news exceed maximum amount.
+		<br>Only allowed to create news with type <b>Normal</b> or <b>Featured-Draft</b></i><br><br>
+	</div>
+	
+	<div layout="row">
+		<md-input-container flex="45">
+			<label>Brief Content *</label>
+			<textarea required name="brief_content" maxlength="200" ng-model="news.brief_content" rows="2"></textarea>
+		</md-input-container>
+	</div>
+	
+    <fieldset class="standard margin-input-container md-padding">
+		<legend>Image Banner *</legend>
+		<div layout="row" layout-align="center center">
+			<input class="padding-top-bottom" type="file" name="image" onchange="angular.element(this).scope().onFileSelect(this.files)" flex/>
+			<md-button class="md-icon-button" ng-click="viewImage($event, 'uploads/news/'+news.image)" ng-if="!isNewEntry()">
+				<md-icon>wallpaper</md-icon>
+			</md-button>
+		</div>
+		<div ng-if="!image.valid" class="red-alert">PNG only, max size 0.5MB</div>
+		<p class="hint">Best image ratio for display is 2:1, recommended size is W:800px H:400px</p>
+    </fieldset>
+	<br>
+	<legend>Full Content *</legend>
+	<div text-angular="text-angular" required name="full_content" ng-model="news.full_content"></div>
+
+	<br><br>
+	<md-divider></md-divider>
+	<md-checkbox ng-model="news.draft" ng-true-value="1" ng-false-value="0" ng-change="draftChanged(news.draft)">Save As draft</md-checkbox>
+	<md-checkbox ng-disabled="news.draft==1" ng-model="send_notif">Send Notification to users</md-checkbox>
+	<p class="hint">When you checked <i>Save As draft</i> the data will not display at user device.</p>
+
+	<br><br>
+    <em> (*) required field</em>
+
+    <div class="md-actions md-padding" layout="row">
+		<span flex></span>
+		<md-button ng-if="!submit_loading" class="md-warn" ng-click="cancel()" > CANCEL </md-button>
+		<md-button ng-if="!submit_loading" ng-disabled="!isReadySubmit() || thisForm.$invalid" ng-click="submit(news)" class="md-raised md-primary"> {{button_text}} </md-button>
+		<md-progress-circular ng-if="submit_loading" class="md-accent" md-mode="indeterminate" md-diameter="30px"></md-progress-circular>
+    </div>
+  </form>
+</md-card>
